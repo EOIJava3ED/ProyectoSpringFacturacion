@@ -10,13 +10,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * The type Proyecto spring application.
+ */
 @SpringBootApplication
 public class ProyectoSpringApplication implements CommandLineRunner {
 
-	@Autowired
+    /**
+     * The Customer repository.
+     */
+    @Autowired
 	CustomerRepository customerRepository;
 
-	public static void main(String[] args)  {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args)  {
 		SpringApplication.run(ProyectoSpringApplication.class, args);
 	}
 

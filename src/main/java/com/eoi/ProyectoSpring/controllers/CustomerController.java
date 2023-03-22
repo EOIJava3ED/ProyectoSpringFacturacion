@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * The type Customer controller.
+ */
 @Controller
 @Log4j2
 @RequiredArgsConstructor
@@ -23,6 +26,14 @@ public class CustomerController {
     @Autowired
     private final CustomerRepository customerRepository;
 
+    /**
+     * Add customer string.
+     *
+     * @param customer the customer
+     * @param result   the result
+     * @param model    the model
+     * @return the string
+     */
     @PostMapping("/addcustomer")
     public String addCustomer(@Valid Customer customer, BindingResult result,Model model) {
         if (result.hasErrors()) {
@@ -32,18 +43,36 @@ public class CustomerController {
         return "redirect:/customer/index";
     }
 
+    /**
+     * Show sign up form string.
+     *
+     * @param customer the customer
+     * @return the string
+     */
     @GetMapping("/signup")
     public String showSignUpForm(Customer customer) {
         return "add-customer";
     }
 
+    /**
+     * Show user list string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/index")
     public String showUserList(Model model) {
         model.addAttribute("customers", customerRepository.findAll());
         return "index";
     }
 
-
+    /**
+     * Show update form string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id,Model  model) {
         Customer customer = customerRepository.findById(id)
@@ -53,6 +82,15 @@ public class CustomerController {
         return "update-customer";
     }
 
+    /**
+     * Update customer string.
+     *
+     * @param id       the id
+     * @param customer the customer
+     * @param result   the result
+     * @param model    the model
+     * @return the string
+     */
     @PostMapping("/update/{id}")
     public String updateCustomer(@PathVariable("id") Integer id, @Valid Customer customer,
                              BindingResult result, Model model) {
@@ -65,6 +103,13 @@ public class CustomerController {
         return "redirect:/customer/index";
     }
 
+    /**
+     * Delete customer string.
+     *
+     * @param id    the id
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/delete/{id}")
     public String deleteCustomer(@PathVariable("id") Integer id, Model model) {
         Customer customer = customerRepository.findById(id)

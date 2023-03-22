@@ -7,6 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 
+/**
+ * The interface Customer repository.
+ */
 @RepositoryRestResource(collectionResourceRel = "customer", path = "customer")
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 
@@ -30,9 +33,26 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
      * Spring buscará los métodos findBy y los asociará al parámetro del mismo nombre.
      * Es decir, findByName valrá si el cliente tiene name entre sus propiedades.
      * Al igual, findByCodigoPostal valdría si el cliente tuviera "codigoPostal" entre sus propiedades.
+     *
+     * @param name the name
+     * @return the list
      */
     List<Customer> findByName(@Param("name") String name);
+
+    /**
+     * Find bysecond name list.
+     *
+     * @param name the name
+     * @return the list
+     */
     List<Customer> findBysecondName(@Param("secondName") String name);
+
+    /**
+     * Find bythird name list.
+     *
+     * @param name the name
+     * @return the list
+     */
     List<Customer> findBythirdName(@Param("thirdName") String name);
 
 
