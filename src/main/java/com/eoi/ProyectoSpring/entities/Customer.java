@@ -10,6 +10,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
+/**
+ * The type Customer.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,6 +21,9 @@ import java.time.LocalDateTime;
 @Table(name="customer")
 public class Customer {
 
+    /**
+     * The Id.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
@@ -29,6 +35,15 @@ public class Customer {
     private String email;
     private LocalDateTime registrationDateTime;
 
+    /**
+     * Instantiates a new Customer.
+     *
+     * @param name                 the name
+     * @param secondName           the second name
+     * @param thirdName            the third name
+     * @param birthDate            the birth date
+     * @param registrationDateTime the registration date time
+     */
     public Customer(String name, String secondName, String thirdName, LocalDate birthDate, LocalDateTime registrationDateTime) {
         this.name = name;
         this.secondName = secondName;
