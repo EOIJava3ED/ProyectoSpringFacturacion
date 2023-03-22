@@ -1,4 +1,4 @@
-package com.eoi.ProyectoSpring.entities;
+package com.eoi.proyectospring.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 
 /**
@@ -34,6 +35,16 @@ public class Customer {
     private LocalDate birthDate;
     private String email;
     private LocalDateTime registrationDateTime;
+
+    /**
+     * El conjunto de direcciones asociadas a este customer. En este caso tenemos una relacion 1:N o OneToMany,
+     *  Además, indicamos el CascadeType=ALL para borrar en cascada todas las direcciones pertenecientes a un clienteç
+     *  en caso de borrar dicho cliente. De este modo, aseguramos la consistencia en la base de datos
+     *  y no dejamos direcciones "huérfanas" en la base de datos, que sin cliente no tendrían sentido
+     *
+     */
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Set<Address> addressSet;
 
     /**
      * Instantiates a new Customer.

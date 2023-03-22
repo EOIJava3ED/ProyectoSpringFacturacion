@@ -1,5 +1,5 @@
-package com.eoi.ProyectoSpring.repositories;
-import com.eoi.ProyectoSpring.entities.Customer;
+package com.eoi.proyectospring.repositories;
+import com.eoi.proyectospring.entities.Customer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

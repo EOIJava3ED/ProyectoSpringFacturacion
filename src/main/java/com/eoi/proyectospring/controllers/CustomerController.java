@@ -1,7 +1,7 @@
-package com.eoi.ProyectoSpring.controllers;
+package com.eoi.proyectospring.controllers;
 
-import com.eoi.ProyectoSpring.entities.Customer;
-import com.eoi.ProyectoSpring.repositories.CustomerRepository;
+import com.eoi.proyectospring.entities.Customer;
+import com.eoi.proyectospring.repositories.CustomerRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
