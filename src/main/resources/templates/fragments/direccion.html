@@ -1,0 +1,11 @@
+<div class="container" th:fragment="direccion">
+        <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                        <h5 th:text="${address.line1}" class="card-title"></h5>
+                        <h6 th:text="${address.line2}"  class="card-subtitle mb-2 text-muted"></h6>
+                        <h6 th:text="${address.line3}"  class="card-subtitle mb-2 text-muted"></h6>
+                        <a href="#" class="card-link">Guardar</a>
+                        <a href="#" class="card-link">Eliminar</a>
+                </div>
+        </div>
+</div>

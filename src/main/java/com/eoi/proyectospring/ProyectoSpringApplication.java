@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,6 +32,7 @@ public class ProyectoSpringApplication implements CommandLineRunner {
 	 */
 	@Autowired
 	AddressRepository addressRepository;
+
 
 	/**
 	 * The entry point of application.
@@ -82,7 +87,6 @@ public class ProyectoSpringApplication implements CommandLineRunner {
 		addressRepository.save(address2);
 		addressRepository.save(address3);
 		addressRepository.save(address4);
-
 
 
 	}
