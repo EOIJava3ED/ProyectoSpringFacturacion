@@ -13,7 +13,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "customer", path = "customer")
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 
-
     /**
      *
      * Tenemos la entidad Customer, y queremos generar un repositorio CRUD en la url /customer
@@ -27,7 +26,6 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
      *  /customer/${id} detalle de un customer  -> por ejemplo, /customer/2  para el customer de id=2
      *
      */
-
 
     /**
      * Spring buscará los métodos findBy y los asociará al parámetro del mismo nombre.

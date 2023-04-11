@@ -2,7 +2,7 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 <!--    <link href="assets/css/bootstrap.min.css" rel="stylesheet">-->
 <link th:href="@{/assets/style/main.css}" rel="stylesheet">
-<div class="container-fluid" th:switch="${customers}" th:fragment="customer">
+<div class="container-fluid" th:switch="${customers}" th:fragment="customers">
     <h2  class="center-block" th:case="null">No users yet!</h2>
     <div th:case="*">
         <h2 class="center-block">CLIENTES</h2>
